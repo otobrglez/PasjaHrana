@@ -1,3 +1,48 @@
-# Sledi besedilo naloge...
 
+#	Naloga
+Podjetje se ukvarja z proizvodnjo pasje hrane. Pasja hrana sestoji iz različnih sestavin
+v različnih deležih in količinah. Različne sestavine imajo različno ceno. Namen naloge
+je poiskati optimalno količino sestavin in predstaviti ceno za dane pogoje.
 
+Cena grama kokošnega mesa = 0.02 euro
+Cena grama svinskega mesa = 0.015 euro
+
+1) Predpostavimo, da bo pasja hrana vsebovala samo 2 sestavini. Kokosje meso in svinsko meso.
+Pripravimo 2 spremenljivki.
+
+	x1 - Delež kokošjega mesa
+	x2 - Delež svinjskega mesa
+
+	Odstotek mesa (x1 in x2) je vedno večji od 0.
+
+2) Formuliranje cenovne funkcije
+
+	min 0.02 x1 + 0.015 x2
+
+3) Formuliranje mej sistema
+
+	Delež kokošjega mesa in svinskega mesa skupaj je 100%
+	1.000 x1 + 1.000 x2 == 100.0
+
+	Delež proteinov mora zadostiti pogoju
+	0.100 x1 + 0.200 x2 >= 8.0
+
+	Delež maščove v hrani mora zadostiti pogoju
+	0.080 x1 + 0.100 x2 >= 6.0
+
+	Delež vlaknin mora zagotoviti pogoj
+	0.001 x1 + 0.005 x2 <= 2.0
+	
+	Količina soli v hrani pora zadostiti pogoj
+	0.002 x1 + 0.005 x2 <= 0.4
+
+# Rezultat
+Program je izračunal, da je optimalno razmerje sestavin v pločevinki pasje hrane 
+34% kokošjega mesa in 66% svinskega mesa. Pri tej kombinaciji pa bi bila pločevinka
+pasje hrane 1.67 eura
+
+#	Knjižnice
+Uporabljene so knjižnice pulp, pulp-or in glpk.
+
+#	Autor
+- Oto Brglez, maj 2011
